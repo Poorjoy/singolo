@@ -196,3 +196,22 @@ a {
 .nav__item:first-child::before {
     content: "";
 }
+
+/* ------ Slider-wrap ------ */
+
+.slider-wrap {
+    background-color: #f06c64;
+    border-bottom: 6px solid #ea676b;
+}
+
+.slider {
+    padding: 53px 40px 54px;
+}
+
+.slider__arrow:hover {
+    opacity: 0.3;
+}
+
+.slider__image:nth-child(2) {
+    padding-right: 19px;
+}
