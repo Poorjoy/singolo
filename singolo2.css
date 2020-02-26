@@ -1,0 +1,108 @@
+/* ------ Fonts ------ */
+@font-face {
+    font-family: Lato;
+    src: url('assets/fonts/Lato-Light.eot'); /* IE9 Compat Modes */
+    src: url('assets/fonts/Lato-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('assets/fonts/Lato-Light.woff2') format('woff2'), /* Super Modern Browsers */
+    url('assets/fonts/Lato-Light.woff') format('woff'), /* Pretty Modern Browsers */
+    url('assets/fonts/Lato-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('assets/fonts/Lato-Light.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Lato;
+    src: url('assets/fonts/Lato-Regular.eot'); /* IE9 Compat Modes */
+    src: url('assets/fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('assets/fonts/Lato-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('assets/fonts/Lato-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+    url('assets/fonts/Lato-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('assets/fonts/Lato-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Lato;
+    src: url('assets/fonts/Lato-Black.eot'); /* IE9 Compat Modes */
+    src: url('assets/fonts/Lato-Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('assets/fonts/Lato-Black.woff2') format('woff2'), /* Super Modern Browsers */
+    url('assets/fonts/Lato-Black.woff') format('woff'), /* Pretty Modern Browsers */
+    url('assets/fonts/Lato-Black.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('assets/fonts/Lato-Black.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-weight: 900;
+}
+
+/* ------ Specification ------ */
+
+body {
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #767e9e;
+    padding: 0;
+    margin: 0;
+    letter-spacing: normal;
+}
+
+.container {
+    max-width: 1020px;
+    margin: 0 auto;
+}
+
+div,
+p,
+a,
+span
+{
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0;
+    line-height: 1.8em;
+}
+
+ul,
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 1em;
+    margin: 0;
+    color: #666d89;
+    padding: 62px 0 20px;
+}
+
+a {
+    transition: all 0.5s ease;
+    text-decoration: none;
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+.d-flex {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+/* ------ Header ------ */
