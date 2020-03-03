@@ -186,3 +186,18 @@ button:active {
 }
 
 /* ------ Header ------ */
+
+.header {
+    background-color: #f06c64;
+    padding-bottom: 44px;
+}
+
+.quote {
+    padding: 0 30px 0 40px;
+}
+
+.quote__text {
+    font-weight: 300;
+    letter-spacing: 0.009em;
+    line-height: 1.7em;
+}
