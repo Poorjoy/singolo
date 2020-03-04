@@ -1,1 +1,1 @@
-https://poorjoy.github.io/singolo/
+# singolo
