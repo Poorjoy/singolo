@@ -238,11 +238,6 @@ input:focus::placeholder, textarea:focus::placeholder {
     text-align: justify;
 }
 
-.services__text {
-    font-size: 12px;
-    text-align: justify;
-}
-
 .services__list {
     flex-wrap: wrap;
 }
@@ -273,7 +268,11 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 
 .services__text {
-    padding-top: 20px;
+    font-size: 12px;
+    text-align: justify;
+    height: 60px;
+    overflow: hidden;
+    margin-top: 20px;
 }
 
 /* ------ Portfolio ------ */
@@ -361,6 +360,9 @@ input:focus::placeholder, textarea:focus::placeholder {
 .about__subtitle {
     padding: 11px 0 8px;
     letter-spacing: -0.22px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .about__subtext {
