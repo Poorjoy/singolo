@@ -101,6 +101,7 @@ h2, h3 {
 
 h2 {
     font-size: 30px;
+    letter-spacing: -0.2px;
 }
 
 h3 {
@@ -239,7 +240,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 
 .services__text-title {
     font-weight: 300;
-    padding: 18px 0 12px;
+    padding: 18px 0 10px;
     line-height: 30px;
     text-align: justify;
 }
@@ -250,7 +251,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 
 .services__item {
     width: 300px;
-    margin-top: 35px;
+    margin-top: 37px;
 }
 
 .services__icon {
@@ -271,14 +272,16 @@ input:focus::placeholder, textarea:focus::placeholder {
 .services__title {
     line-height: 0px;
     padding-top: 7px;
+    letter-spacing: -0.1px;
 }
 
 .services__text {
     font-size: 12px;
     text-align: justify;
     height: 60px;
+    line-height: 22px;
     overflow: hidden;
-    margin-top: 20px;
+    margin-top: 19px;
 }
 
 /* ------ Portfolio ------ */
@@ -494,14 +497,15 @@ input:focus::placeholder, textarea:focus::placeholder {
 
 .quote__subtitle {
     color: #f0d8d9;
+    letter-spacing: -0.1px;
 }
 
 .quote__subtext {
     font-size: 12px;
-    padding: 9px 0 28px;
-    line-height: 21px;
+    padding: 7px 0 26px;
+    line-height: 22px;
     text-align: justify;
-    letter-spacing: -0.026px;
+    letter-spacing: -0.027px;
 }
 
 .quote__list a {
