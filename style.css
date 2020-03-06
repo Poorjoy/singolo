@@ -209,7 +209,11 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 
 .slider-wrap {
-    padding: 53px 40px 54px;
+    padding: 52px 40px 54px;
+}
+
+.slider-wrap__arrow:first-child {
+    padding-left: 2px;
 }
 
 .slider-wrap__arrow:hover {
@@ -217,7 +221,8 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 
 .slider-wrap__image:nth-child(2) {
-    padding-right: 19px;
+    margin-right: 19px;
+    margin-top: 1px;
 }
 
 /* ------ Services-wrap ------ */
@@ -228,12 +233,12 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 
 .services {
-    padding: 59px 40px 60px;
+    padding: 59px 40px 65px;
 }
 
 .services__text-title {
     font-weight: 300;
-    padding: 18px 0 14px;
+    padding: 18px 0 12px;
     line-height: 30px;
     text-align: justify;
 }
@@ -244,7 +249,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 
 .services__item {
     width: 300px;
-    margin-top: 33px;
+    margin-top: 35px;
 }
 
 .services__icon {
@@ -283,16 +288,16 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 
 .photos {
-    padding: 61px 40px 47px;
+    padding: 59px 40px 47px;
 }
 
 .photos__text {
-    padding-top: 21px;
+    padding-top: 23px;
     letter-spacing: -0.22px;
 }
 
 .photos__list {
-    padding: 13px 0 22px 1px;
+    padding: 12px 0 22px 1px;
 }
 
 .photos__item {
@@ -338,11 +343,11 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 
 .about {
-    padding: 60px 40px 67px;
+    padding: 59px 40px 67px;
 }
 
 .about__text {
-    padding-top: 17px;
+    padding-top: 18px;
     font-weight: 300;
     line-height: 30px;
     text-align: justify;
@@ -407,7 +412,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 
 .quote {
-    padding: 60px 40px 20px;
+    padding: 59px 40px 20px;
 }
 
 .quote__title {
@@ -418,11 +423,12 @@ input:focus::placeholder, textarea:focus::placeholder {
     font-weight: 300;
     text-align: justify;
     line-height: 30px;
-    padding: 17px 0 43px;
+    padding: 18px 0 42px;
 }
 
 .quote__form {
     width: 620px;
+    padding-top: 1px;
 }
 
 .quote__input, .quote__textarea {
@@ -491,7 +497,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 
 .quote__subtext {
     font-size: 12px;
-    padding: 8px 0 28px;
+    padding: 9px 0 28px;
     line-height: 21px;
     text-align: justify;
     letter-spacing: -0.026px;
