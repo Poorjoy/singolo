@@ -112,3 +112,18 @@ function scrollToNext() {
     sliderList.style.transition = 'left 0.6s ease-in-out';
     sliderList.style.left = -(slideWidth * pos) + 'px';
 }
+
+// Add active class to portfolioMenu links
+
+let portfolioMenu = document.querySelector('.photos__list'),
+    portfolioLinks = document.querySelectorAll('.photos__link');
+
+portfolioMenu.addEventListener('click', function (event) {
+    portfolioLinks.forEach(function (item) {
+        event.preventDefault();
+
+        item.classList.remove('active-btn');
+        event.target.classList.add('active-btn');
+
+    });
+});
