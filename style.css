@@ -2,44 +2,28 @@
 @font-face {
     font-family: "Lato";
     src: url("assets/fonts/Lato-Light.eot"); /* IE9 Compat Modes */
-    src: url("assets/fonts/Lato-Light.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url("assets/fonts/Lato-Light.woff2") format("woff2"), /* Super Modern Browsers */
-    url("assets/fonts/Lato-Light.woff") format("woff"), /* Pretty Modern Browsers */
-    url("assets/fonts/Lato-Light.ttf")  format("truetype"), /* Safari, Android, iOS */
-    url("assets/fonts/Lato-Light.svg#svgFontName") format("svg"); /* Legacy iOS */
+    src: url("assets/fonts/Lato-Light.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */ url("assets/fonts/Lato-Light.woff2") format("woff2"), /* Super Modern Browsers */ url("assets/fonts/Lato-Light.woff") format("woff"), /* Pretty Modern Browsers */ url("assets/fonts/Lato-Light.ttf") format("truetype"), /* Safari, Android, iOS */ url("assets/fonts/Lato-Light.svg#svgFontName") format("svg"); /* Legacy iOS */
     font-weight: 300;
 }
 
 @font-face {
     font-family: "Lato";
     src: url("assets/fonts/Lato-Regular.eot"); /* IE9 Compat Modes */
-    src: url("assets/fonts/Lato-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url("assets/fonts/Lato-Regular.woff2") format("woff2"), /* Super Modern Browsers */
-    url("assets/fonts/Lato-Regular.woff") format("woff"), /* Pretty Modern Browsers */
-    url("assets/fonts/Lato-Regular.ttf")  format("truetype"), /* Safari, Android, iOS */
-    url("assets/fonts/Lato-Regular.svg#svgFontName") format("svg"); /* Legacy iOS */
+    src: url("assets/fonts/Lato-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */ url("assets/fonts/Lato-Regular.woff2") format("woff2"), /* Super Modern Browsers */ url("assets/fonts/Lato-Regular.woff") format("woff"), /* Pretty Modern Browsers */ url("assets/fonts/Lato-Regular.ttf") format("truetype"), /* Safari, Android, iOS */ url("assets/fonts/Lato-Regular.svg#svgFontName") format("svg"); /* Legacy iOS */
     font-weight: 400;
 }
 
 @font-face {
     font-family: "Lato";
     src: url("assets/fonts/Lato-Bold.eot"); /* IE9 Compat Modes */
-    src: url("assets/fonts/Lato-Bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url("assets/fonts/Lato-Bold.woff2") format("woff2"), /* Super Modern Browsers */
-    url("assets/fonts/Lato-Bold.woff") format("woff"), /* Pretty Modern Browsers */
-    url("assets/fonts/Lato-Bold.ttf")  format("truetype"), /* Safari, Android, iOS */
-    url("assets/fonts/Lato-Bold.svg#svgFontName") format("svg"); /* Legacy iOS */
+    src: url("assets/fonts/Lato-Bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */ url("assets/fonts/Lato-Bold.woff2") format("woff2"), /* Super Modern Browsers */ url("assets/fonts/Lato-Bold.woff") format("woff"), /* Pretty Modern Browsers */ url("assets/fonts/Lato-Bold.ttf") format("truetype"), /* Safari, Android, iOS */ url("assets/fonts/Lato-Bold.svg#svgFontName") format("svg"); /* Legacy iOS */
     font-weight: 700;
 }
 
 @font-face {
     font-family: "Lato";
     src: url("assets/fonts/Lato-Black.eot"); /* IE9 Compat Modes */
-    src: url("assets/fonts/Lato-Black.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url("assets/fonts/Lato-Black.woff2") format("woff2"), /* Super Modern Browsers */
-    url("assets/fonts/Lato-Black.woff") format("woff"), /* Pretty Modern Browsers */
-    url("assets/fonts/Lato-Black.ttf")  format("truetype"), /* Safari, Android, iOS */
-    url("assets/fonts/Lato-Black.svg#svgFontName") format("svg"); /* Legacy iOS */
+    src: url("assets/fonts/Lato-Black.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */ url("assets/fonts/Lato-Black.woff2") format("woff2"), /* Super Modern Browsers */ url("assets/fonts/Lato-Black.woff") format("woff"), /* Pretty Modern Browsers */ url("assets/fonts/Lato-Black.ttf") format("truetype"), /* Safari, Android, iOS */ url("assets/fonts/Lato-Black.svg#svgFontName") format("svg"); /* Legacy iOS */
     font-weight: 900;
 }
 
@@ -48,9 +32,9 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    -webkit-box-sizing:border-box
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box
 }
 
 body {
@@ -94,7 +78,7 @@ h1 {
     letter-spacing: -0.4px;
 }
 
-h2, h3 {
+h2, h3, h4 {
     font-weight: 900;
     color: #666d89;
 }
@@ -104,7 +88,7 @@ h2 {
     letter-spacing: -0.2px;
 }
 
-h3 {
+h3, h4 {
     font-size: 18px;
 }
 
@@ -359,13 +343,13 @@ input:focus::placeholder, textarea:focus::placeholder {
 
 .slider-links__arrow-prev {
     position: absolute;
-    bottom: 281px;
+    bottom: 282px;
     left: 42px;
 }
 
 .slider-links__arrow-next {
     position: absolute;
-    bottom: 281px;
+    bottom: 282px;
     left: 964px;
 }
 
@@ -617,7 +601,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 
 .quote {
-    padding: 59px 40px 20px;
+    padding: 59px 40px 19px;
 }
 
 .quote__title {
@@ -628,12 +612,12 @@ input:focus::placeholder, textarea:focus::placeholder {
     font-weight: 300;
     text-align: justify;
     line-height: 30px;
-    padding: 18px 0 42px;
+    padding: 18px 0 41px;
 }
 
 .quote__form {
     width: 620px;
-    padding-top: 1px;
+    padding-top: 3px;
     position: relative;
 }
 
@@ -647,6 +631,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 .quote__input {
     height: 38px;
     margin-bottom: 16px;
+    padding-bottom: 1px;
 }
 
 .quote__input:focus {
@@ -662,7 +647,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 .quote__textarea {
     display: block;
     height: 202px;
-    padding-top: 11px;
+    padding-top: 10px;
     margin-bottom: 13px;
 }
 
@@ -700,11 +685,12 @@ input:focus::placeholder, textarea:focus::placeholder {
 .quote__subtitle {
     color: #f0d8d9;
     letter-spacing: -0.1px;
+    padding-top: 1px;
 }
 
 .quote__subtext {
     font-size: 12px;
-    padding: 7px 0 26px;
+    padding: 8px 0 25px;
     line-height: 22px;
     text-align: justify;
     letter-spacing: -0.027px;
@@ -737,7 +723,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 
 .quote__phone {
     width: 11px;
-    margin-right: 13px;
+    margin-right: 12px;
 }
 
 .quote__mail {
@@ -932,7 +918,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 
 .links {
-    padding: 21px 40px 23px 42px;
+    padding: 22px 40px 23px 42px;
 }
 
 .links__item {
@@ -959,4 +945,5 @@ input:focus::placeholder, textarea:focus::placeholder {
 
 .links__text {
     letter-spacing: -0.16px;
+    padding-bottom: 1px;
 }
