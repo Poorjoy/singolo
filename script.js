@@ -147,3 +147,24 @@ listImages.addEventListener('click', function (event) {
     } else event.target.classList.add('photos__border');
 
 });
+
+// Shuffle pictures
+
+let portfolioBtnAll = document.getElementById('photos__item_all'),
+    portfolioBtnWeb = document.getElementById('photos__item_web'),
+    portfolioBtnDesign = document.getElementById('photos__item_design'),
+    portfolioBtnArtwork = document.getElementById('photos__item_artwork');
+
+function shufflePictures(event) {
+    if (!event.target.classList.contains('active-btn')) {
+        for (let i = images.length; i > 0; i--) {
+            let randomIndex = Math.floor(Math.random() * (i + 1));
+            listImages.insertBefore(images[randomIndex], images[i]);
+        }
+    }
+}
+
+portfolioBtnAll.addEventListener('click', shufflePictures);
+portfolioBtnWeb.addEventListener('click', shufflePictures);
+portfolioBtnDesign.addEventListener('click', shufflePictures);
+portfolioBtnArtwork.addEventListener('click', shufflePictures);
