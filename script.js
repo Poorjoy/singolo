@@ -163,20 +163,21 @@ portfolioBtnArtwork.addEventListener('click', shufflePictures);
 
 // Image border
 
-listImages.addEventListener('click', function (event) {
+for (let i = 0; i < images.length; i++) {
+    images[i].addEventListener('click', function (event) {
+        images.forEach(function (item) {
+            if (event.target !== item) {
+                item.classList.remove('photos__border');
+            }
+        });
 
-    images.forEach(function (item) {
-        if (event.target !== item) {
-            item.classList.remove('photos__border');
-        }
+
+        if (event.target.classList.contains('photos__border')) {
+            event.target.classList.remove('photos__border');
+        } else event.target.classList.add('photos__border');
     });
+}
 
-
-    if (event.target.classList.contains('photos__border')) {
-        event.target.classList.remove('photos__border');
-    } else event.target.classList.add('photos__border');
-
-});
 
 // Form
 
