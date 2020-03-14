@@ -81,6 +81,8 @@ prev.addEventListener('click', scrollToPrev);
 next.addEventListener('click', scrollToNext);
 
 function scrollToPrev() {
+    event.preventDefault();
+
     pos--;
 
     if (pos < 0) {
@@ -98,6 +100,8 @@ function scrollToPrev() {
 
 
 function scrollToNext() {
+    event.preventDefault();
+
     pos++;
 
     if (pos > slides.length - 1) {
