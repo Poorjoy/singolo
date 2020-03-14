@@ -478,11 +478,66 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 
 .photos__img {
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    width: 220px;
+    height: 187px;
+}
+
+.photos__img-project-one {
+    background: url("assets/img/Project1.png") center;
+}
+
+.photos__img-project-two {
+    background: url("assets/img/Project2.png") center;
+}
+
+.photos__img-project-three {
+    background: url("assets/img/Project3.png") center;
+}
+
+.photos__img-project-four {
+    background: url("assets/img/Project4.png") center;
+}
+
+.photos__img-project-five {
+    background: url("assets/img/Project5.png") center;
+}
+
+.photos__img-project-six {
+    background: url("assets/img/Project6.png") center;
+}
+
+.photos__img-project-seven {
+    background: url("assets/img/Project7.png") center;
+}
+
+.photos__img-project-eight {
+    background: url("assets/img/Project8.png") center;
+}
+
+.photos__img-project-nine {
+    background: url("assets/img/Project9.png") center;
+}
+
+.photos__img-project-ten {
+    background: url("assets/img/Project10.png") center;
+}
+
+.photos__img-project-eleven {
+    background: url("assets/img/Project11.png") center;
+}
+
+.photos__img-project-twelve {
+    background: url("assets/img/Project12.png") center;
 }
 
 .photos__img:nth-child(n+13) {
     display: none;
+}
+
+.photos__border {
+    border: 5px solid #F06C64;
 }
 
 /* ------ About-us ------ */
