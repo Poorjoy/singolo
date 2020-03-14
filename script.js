@@ -68,8 +68,9 @@ toggleScreen(iphoneVerticalScreenThree, iphoneBlackVerticalThree);
 
 // Slider
 
-let slideWidth = 1020,
+let slideWidth = 850,
     sliderList = document.querySelector('.slider-wrap__list'),
+    sliderMain = document.querySelector('.slider'),
     slides = document.querySelectorAll('.slider-wrap__slider'),
     prev = document.querySelector('.slider-links__arrow-prev'),
     next = document.querySelector('.slider-links__arrow-next'),
@@ -82,7 +83,6 @@ next.addEventListener('click', scrollToNext);
 
 function scrollToPrev() {
     event.preventDefault();
-
     pos--;
 
     if (pos < 0) {
@@ -96,12 +96,14 @@ function scrollToPrev() {
 
     sliderList.style.transition = 'left 0.6s ease-in-out';
     sliderList.style.left = -(slideWidth * pos) + 'px';
+    if (sliderMain.classList.contains('new-bg')) {
+        sliderMain.classList.remove('new-bg');
+    } else sliderMain.classList.add('new-bg');
 }
 
 
 function scrollToNext() {
     event.preventDefault();
-
     pos++;
 
     if (pos > slides.length - 1) {
@@ -115,6 +117,9 @@ function scrollToNext() {
 
     sliderList.style.transition = 'left 0.6s ease-in-out';
     sliderList.style.left = -(slideWidth * pos) + 'px';
+    if (sliderMain.classList.contains('new-bg')) {
+        sliderMain.classList.remove('new-bg');
+    } else sliderMain.classList.add('new-bg');
 }
 
 // Add active class to portfolioMenu links
@@ -132,29 +137,12 @@ portfolioMenu.addEventListener('click', function (event) {
     });
 });
 
-// Image border
-
-let listImages = document.querySelector('.photos__images'),
-    images = document.querySelectorAll('.photos__img');
-
-listImages.addEventListener('click', function (event) {
-
-    images.forEach(function (item) {
-        if (event.target !== item) {
-            item.classList.remove('photos__border');
-        }
-    });
-
-
-    if (event.target.classList.contains('photos__border')) {
-        event.target.classList.remove('photos__border');
-    } else event.target.classList.add('photos__border');
-
-});
 
 // Shuffle pictures
 
-let portfolioBtnAll = document.getElementById('photos__item_all'),
+let listImages = document.querySelector('.photos__images'),
+    images = document.querySelectorAll('.photos__img'),
+    portfolioBtnAll = document.getElementById('photos__item_all'),
     portfolioBtnWeb = document.getElementById('photos__item_web'),
     portfolioBtnDesign = document.getElementById('photos__item_design'),
     portfolioBtnArtwork = document.getElementById('photos__item_artwork');
@@ -172,6 +160,23 @@ portfolioBtnAll.addEventListener('click', shufflePictures);
 portfolioBtnWeb.addEventListener('click', shufflePictures);
 portfolioBtnDesign.addEventListener('click', shufflePictures);
 portfolioBtnArtwork.addEventListener('click', shufflePictures);
+
+// Image border
+
+listImages.addEventListener('click', function (event) {
+
+    images.forEach(function (item) {
+        if (event.target !== item) {
+            item.classList.remove('photos__border');
+        }
+    });
+
+
+    if (event.target.classList.contains('photos__border')) {
+        event.target.classList.remove('photos__border');
+    } else event.target.classList.add('photos__border');
+
+});
 
 // Form
 
@@ -232,3 +237,5 @@ formInputs[1].addEventListener('click', function () {
     mailHint.classList.add('none');
     mailSecondHint.classList.add('none');
 });
+
+
