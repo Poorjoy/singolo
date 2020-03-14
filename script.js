@@ -172,3 +172,63 @@ portfolioBtnAll.addEventListener('click', shufflePictures);
 portfolioBtnWeb.addEventListener('click', shufflePictures);
 portfolioBtnDesign.addEventListener('click', shufflePictures);
 portfolioBtnArtwork.addEventListener('click', shufflePictures);
+
+// Form
+
+let submitBtn = document.querySelector('.quote__btn'),
+    formWindow = document.querySelector('.modal-window'),
+    okFormBtn = document.querySelector('.modal-window__submit-btn'),
+    formInputs = document.querySelectorAll('.quote__input'),
+    formTextarea = document.querySelector('.quote__textarea'),
+    nameHint = document.querySelector('.quote__name-hint'),
+    mailHint = document.querySelector('.quote__mail-hint'),
+    mailSecondHint = document.querySelector('.quote__mail-hint-second'),
+    subjectText = document.querySelector('.modal-window__subject'),
+    describeText = document.querySelector('.modal-window__describe');
+
+okFormBtn.addEventListener('click', function () {
+    formWindow.classList.add('none');
+});
+
+window.addEventListener('click', function (event) {
+    if (event.target === formWindow) {
+        formWindow.classList.add('none');
+    }
+});
+
+
+submitBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    if (formInputs[0].value === '') {
+        nameHint.classList.remove('none');
+    }
+
+    if (formInputs[1].value === '') {
+        mailHint.classList.remove('none');
+    } else if (formInputs[1].value.search(/@/) === -1) {
+        mailSecondHint.classList.remove('none');
+    }
+
+    if (formInputs[0].value !== '' && formInputs[1].value.search(/@/) !== -1) {
+        if (formInputs[2].value === '') {
+            subjectText.textContent = 'Без темы'
+        } else subjectText.textContent = formInputs[2].value;
+
+        if (formTextarea.value === '') {
+            describeText.textContent = 'Без описания'
+        } else describeText.textContent = formTextarea.value;
+
+
+        formWindow.classList.remove('none');
+    }
+});
+
+formInputs[0].addEventListener('click', function () {
+    nameHint.classList.add('none');
+});
+
+formInputs[1].addEventListener('click', function () {
+    mailHint.classList.add('none');
+    mailSecondHint.classList.add('none');
+});

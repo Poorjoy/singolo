@@ -634,6 +634,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 .quote__form {
     width: 620px;
     padding-top: 1px;
+    position: relative;
 }
 
 .quote__input, .quote__textarea {
@@ -742,6 +743,184 @@ input:focus::placeholder, textarea:focus::placeholder {
 .quote__mail {
     width: 13px;
     margin-right: 10px;
+}
+
+/* ------ Input hints ------ */
+
+.quote__name-hint {
+    position: absolute;
+    width: 250px;
+    height: 38px;
+    background: #fff;
+    color: #666d89;
+    opacity: 0.8;
+    top: 50px;
+    left: 50%;
+    padding-left: 10px;
+    padding-top: 12px;
+    font-size: 12px;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+
+.quote__name-hint:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0px;
+    border-left: 10px solid #fff;
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.quote__mail-hint {
+    position: absolute;
+    width: 250px;
+    height: 38px;
+    background: #fff;
+    color: #666d89;
+    opacity: 0.8;
+    top: 104px;
+    left: 50%;
+    padding-left: 10px;
+    padding-top: 12px;
+    font-size: 12px;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+
+.quote__mail-hint:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0px;
+    border-left: 10px solid #fff;
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.quote__mail-hint-second {
+    position: absolute;
+    width: 250px;
+    height: 38px;
+    background: #fff;
+    color: #666d89;
+    opacity: 0.8;
+    top: 104px;
+    left: 50%;
+    padding-left: 10px;
+    padding-top: 12px;
+    font-size: 12px;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+
+.quote__mail-hint-second:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0px;
+    border-left: 10px solid #fff;
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+/* ------ Modal window ------ */
+
+.modal-window {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-window__content {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 350px;
+    height: 200px;
+    border-radius: 5px;
+    background-color: #fff;
+    opacity: 0.8;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+.modal-window__title {
+    margin-bottom: 30px;
+}
+
+.modal-window__content p {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #666d89;
+}
+
+.modal-window__subject {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.modal-window__describe {
+    height: 45px;
+    overflow: hidden;
+}
+
+.modal-window__submit-btn {
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 70px;
+    height: 25px;
+    font-size: 12px;
+    background-color: #f48c8f;
+    color: #fff;
+}
+
+.modal-window__submit-btn:hover {
+    color: #fff;
+    background-color: #d6564f;
 }
 
 /* ------ Footer ------ */
