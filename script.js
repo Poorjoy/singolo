@@ -127,3 +127,23 @@ portfolioMenu.addEventListener('click', function (event) {
 
     });
 });
+
+// Image border
+
+let listImages = document.querySelector('.photos__images'),
+    images = document.querySelectorAll('.photos__img');
+
+listImages.addEventListener('click', function (event) {
+
+    images.forEach(function (item) {
+        if (event.target !== item) {
+            item.classList.remove('photos__border');
+        }
+    });
+
+
+    if (event.target.classList.contains('photos__border')) {
+        event.target.classList.remove('photos__border');
+    } else event.target.classList.add('photos__border');
+
+});
