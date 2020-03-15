@@ -892,11 +892,6 @@ input:focus::placeholder, textarea:focus::placeholder {
     text-overflow: ellipsis;
 }
 
-.modal-window__describe {
-    height: 45px;
-    overflow: hidden;
-}
-
 .modal-window__submit-btn {
     text-transform: uppercase;
     position: absolute;

@@ -183,7 +183,8 @@ for (let i = 0; i < images.length; i++) {
 
 let submitBtn = document.querySelector('.quote__btn'),
     formWindow = document.querySelector('.modal-window'),
-    okFormBtn = document.querySelector('.modal-window__submit-btn'),
+    contentWindow = document.querySelector('.modal-window__content');
+okFormBtn = document.querySelector('.modal-window__submit-btn'),
     formInputs = document.querySelectorAll('.quote__input'),
     formTextarea = document.querySelector('.quote__textarea'),
     nameHint = document.querySelector('.quote__name-hint'),
@@ -192,13 +193,24 @@ let submitBtn = document.querySelector('.quote__btn'),
     subjectText = document.querySelector('.modal-window__subject'),
     describeText = document.querySelector('.modal-window__describe');
 
+function cleanForm() {
+    formInputs[0].value = '';
+    formInputs[1].value = '';
+    formInputs[2].value = '';
+    formTextarea.value = '';
+    contentWindow.style.width = '350px';
+    contentWindow.style.height = '200px';
+}
+
 okFormBtn.addEventListener('click', function () {
     formWindow.classList.add('none');
+    cleanForm();
 });
 
 window.addEventListener('click', function (event) {
     if (event.target === formWindow) {
         formWindow.classList.add('none');
+        cleanForm();
     }
 });
 
@@ -212,19 +224,34 @@ submitBtn.addEventListener('click', function (event) {
 
     if (formInputs[1].value === '') {
         mailHint.classList.remove('none');
-    } else if (formInputs[1].value.search(/@/) === -1) {
+    } else if (formInputs[1].value.search(/.+@.+\..+/i) === -1) {
         mailSecondHint.classList.remove('none');
     }
 
-    if (formInputs[0].value !== '' && formInputs[1].value.search(/@/) !== -1) {
+    if (formInputs[0].value !== '' && formInputs[1].value.search(/.+@.+\..+/i) !== -1) {
         if (formInputs[2].value === '') {
-            subjectText.textContent = 'Без темы'
-        } else subjectText.textContent = formInputs[2].value;
+            subjectText.textContent = 'Тема: Без темы'
+        } else subjectText.textContent = 'Тема: ' + formInputs[2].value;
 
         if (formTextarea.value === '') {
-            describeText.textContent = 'Без описания'
-        } else describeText.textContent = formTextarea.value;
+            describeText.textContent = 'Описание: Без описания'
+        } else describeText.textContent = 'Описание: ' + formTextarea.value;
 
+
+        if (formTextarea.value.length > 101 && formTextarea.value.length <= 401) {
+            contentWindow.style.width = '410px';
+            contentWindow.style.height = '300px';
+        }
+
+        if (formTextarea.value.length >= 402 && formTextarea.value.length < 601) {
+            contentWindow.style.width = '440px';
+            contentWindow.style.height = '370px';
+        }
+
+        if (formTextarea.value.length >= 601 && formTextarea.value.length <= 1000) {
+            contentWindow.style.width = '520px';
+            contentWindow.style.height = '450px';
+        }
 
         formWindow.classList.remove('none');
     }
@@ -238,5 +265,3 @@ formInputs[1].addEventListener('click', function () {
     mailHint.classList.add('none');
     mailSecondHint.classList.add('none');
 });
-
-
