@@ -1,29 +1,22 @@
 // Add active class to menu links
+document.addEventListener('scroll', onScroll);
 
-let menu = document.querySelector('.nav__menu'),
-    menuLinks = document.querySelectorAll('.nav__link');
+function onScroll() {
+    const curPos = window.scrollY;
+    const divs = document.querySelectorAll('.anchor');
+    const links = document.querySelectorAll('.nav__link');
 
-menu.addEventListener('click', function (event) {
-    menuLinks.forEach(function (item) {
-        item.classList.remove('active');
-        event.target.classList.add('active');
+    divs.forEach((el) => {
+        if (el.offsetTop - 300 < curPos) {
+            links.forEach((a) => {
+                a.classList.remove('active');
+                if (el.getAttribute('id') === a.getAttribute('href').substring(1)) {
+                    a.classList.add('active');
+                }
+            })
+        }
     });
-});
-
-//Smooth scroll
-
-menuLinks.forEach(function (item) {
-    item.addEventListener('click', function (event) {
-        event.preventDefault();
-
-        let anchor = item.getAttribute('href').substr(1);
-
-        document.getElementById(anchor).scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-    });
-});
+}
 
 // Black screen
 
@@ -230,12 +223,12 @@ submitBtn.addEventListener('click', function (event) {
 
     if (formInputs[0].value !== '' && formInputs[1].value.search(/.+@.+\..+/i) !== -1) {
         if (formInputs[2].value === '') {
-            subjectText.textContent = 'Тема: Без темы'
-        } else subjectText.textContent = 'Тема: ' + formInputs[2].value;
+            subjectText.textContent = 'Subject: No subject'
+        } else subjectText.textContent = 'Subject: ' + formInputs[2].value;
 
         if (formTextarea.value === '') {
-            describeText.textContent = 'Описание: Без описания'
-        } else describeText.textContent = 'Описание: ' + formTextarea.value;
+            describeText.textContent = 'Description: No description'
+        } else describeText.textContent = 'Description: ' + formTextarea.value;
 
 
         if (formTextarea.value.length > 101 && formTextarea.value.length <= 401) {
