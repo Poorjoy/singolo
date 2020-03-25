@@ -46,7 +46,6 @@ body {
     padding: 0;
     margin: 0;
     letter-spacing: normal;
-    min-width: 1020px;
 }
 
 .container {
@@ -75,8 +74,8 @@ h1 {
     font-size: 25px;
     text-transform: uppercase;
     color: #fff;
-    line-height: 24px;
-    letter-spacing: -0.4px;
+    line-height: 25px;
+    letter-spacing: -0.5px;
 }
 
 h2, h3, h4 {
@@ -164,10 +163,6 @@ input:focus::placeholder, textarea:focus::placeholder {
     color: #f06c64;
 }
 
-.nav__menu {
-    padding-top: 3px;
-}
-
 .nav__item {
     position: relative;
     display: inline-block;
@@ -177,7 +172,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 .nav__menu li + li::before {
     position: absolute;
     bottom: 0;
-    left: 7px;
+    left: 10px;
     content: ".";
     font-size: 24px;
     color: #494e62;
@@ -190,7 +185,7 @@ input:focus::placeholder, textarea:focus::placeholder {
     text-align: left;
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: -0.22px;
+    letter-spacing: -0.26px;
 }
 
 .nav__link:hover,
@@ -244,6 +239,9 @@ input:focus::placeholder, textarea:focus::placeholder {
     left: 32px;
     z-index: 0;
     cursor: pointer;
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 .slider-wrap__black-vertical {
@@ -267,6 +265,9 @@ input:focus::placeholder, textarea:focus::placeholder {
     left: 345px;
     z-index: 0;
     cursor: pointer;
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 .slider-wrap__black-horizontal {
@@ -351,21 +352,25 @@ input:focus::placeholder, textarea:focus::placeholder {
     cursor: pointer;
 }
 
-.slider-arrows {
+.slider__arrow-prev {
     position: relative;
 }
 
 .slider-links__arrow-prev {
     position: absolute;
-    bottom: 282px;
+    top: 281px;
     left: 42px;
     opacity: 0.5;
+}
+
+.slider__arrow-next {
+    position: relative;
 }
 
 .slider-links__arrow-next {
     position: absolute;
     bottom: 282px;
-    left: 964px;
+    right: 40px;
     opacity: 0.5;
 }
 
@@ -382,12 +387,16 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 
 .services {
-    padding: 59px 40px 65px;
+    padding: 59px 30px 38px;
+}
+
+.services__main-title {
+    padding: 0 10px;
 }
 
 .services__text-title {
     font-weight: 300;
-    padding: 18px 0 10px;
+    padding: 18px 10px 37px;
     line-height: 30px;
     text-align: justify;
 }
@@ -397,8 +406,8 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 
 .services__item {
-    width: 300px;
-    margin-top: 37px;
+    margin: 10px 10px 27px;
+    flex: 1 0 20%;
 }
 
 .services__icon {
@@ -414,6 +423,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 
 .services__wrap {
     width: 220px;
+    margin-left: 20px;
 }
 
 .services__title {
@@ -440,16 +450,20 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 
 .photos {
-    padding: 59px 40px 47px;
+    padding: 59px 30px 57px;
+}
+
+.photos__title {
+    padding: 0 10px;
 }
 
 .photos__text {
-    padding-top: 23px;
     letter-spacing: -0.22px;
+    padding: 23px 10px 0;
 }
 
 .photos__list {
-    padding: 12px 0 22px 1px;
+    padding: 12px 10px 12px 11px;
 }
 
 .photos__item {
@@ -476,14 +490,26 @@ input:focus::placeholder, textarea:focus::placeholder {
 
 .photos__images {
     flex-wrap: wrap;
-    width: 940px;
 }
 
-.photos__img {
-    margin-bottom: 20px;
+.photos__images div {
     cursor: pointer;
-    width: 220px;
-    height: 187px;
+}
+
+.photos__images  li {
+    margin: 10px;
+    flex: 1 0 20%;
+}
+
+.photos__images li:before {
+    content: "";
+    float: left;
+    padding-top: 85%;
+}
+
+.photos__images div {
+    width: 100%;
+    height: 100%;
 }
 
 .photos__img-project-one {
@@ -539,7 +565,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 
 .photos__border {
-    border: 5px solid #F06C64;
+    outline: 5px solid #F06C64;
 }
 
 /* ------ About-us ------ */
@@ -551,23 +577,33 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 
 .about {
-    padding: 59px 40px 67px;
+    padding: 59px 30px 57px;
+}
+
+.about__title {
+    padding: 0 10px;
 }
 
 .about__text {
-    padding-top: 18px;
+    padding: 18px 10px 0;
     font-weight: 300;
     line-height: 30px;
     text-align: justify;
 }
 
 .about__list {
-    padding-top: 45px;
-    width: 940px;
+    padding-top: 35px;
+    display: flex;
 }
 
 .about__item {
-    width: 300px;
+    margin: 10px;
+    flex: 1 0 20%;
+}
+
+.about__img {
+    /*width: 300px;*/
+    width: 100%;
 }
 
 .about__subtitle {
@@ -635,14 +671,22 @@ input:focus::placeholder, textarea:focus::placeholder {
     padding: 18px 0 41px;
 }
 
+.quote__information {
+    flex-wrap: wrap;
+}
+
 .quote__form {
-    width: 620px;
+    width: 66%;
     padding-top: 3px;
     position: relative;
 }
 
+.quote__data-form {
+    display: flex;
+    flex-direction: column;
+}
+
 .quote__input, .quote__textarea {
-    width: 619px;
     background-color: #d6564f;
     color: #f48c8f;
     padding-left: 15px;
@@ -686,6 +730,7 @@ input:focus::placeholder, textarea:focus::placeholder {
     padding: 10px 30px;
     background-color: #f0d8d9;
     color: #d6564f;
+    width: 100px;
 }
 
 .quote__btn:hover {
@@ -699,7 +744,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 
 .quote__contacts {
-    width: 300px;
+    width: 32%;
 }
 
 .quote__subtitle {
@@ -965,4 +1010,168 @@ input:focus::placeholder, textarea:focus::placeholder {
 .links__text {
     letter-spacing: -0.16px;
     padding-bottom: 1px;
+}
+
+/* ------ Media-queries ------ */
+
+@media (max-width: 1019px) {
+    .container {
+        width: 100%;
+    }
+
+    .nav {
+        padding: 31px 40px 33px;
+    }
+
+    .nav__link {
+        letter-spacing: -0.1px;
+    }
+
+    .slider-wrap {
+        width: 620px;
+        height: 445px;
+        margin: 0 auto;
+    }
+
+    .slider-wrap__image-vertical {
+        transform:  scale(0.75);
+        left: -20px;
+        top: -11px;
+    }
+
+    .slider-wrap__black-vertical {
+        transform:  scale(0.76);
+        left: -3px;
+        top: -4px;
+    }
+
+    .slider-wrap__image-horizontal {
+        transform:  scale(0.75);
+        left: 185px;
+        top: 81px;
+    }
+
+    .slider-wrap__black-horizontal {
+        transform:  scale(0.76);
+        right: 267px;
+        top: 68px;
+    }
+
+    .slider-wrap__image-vertical-one {
+        transform: scale(0.75);
+        left: 106px;
+        top: 35px;
+    }
+
+    .slider-wrap__black-vertical-one {
+        transform: scale(0.76);
+        left: 116px;
+        top: 80px;
+    }
+
+    .slider-wrap__image-vertical-two {
+        transform: scale(0.75);
+        left: 195px;
+        top: -70px;
+    }
+
+    .slider-wrap__black-vertical-two {
+        transform: scale(0.76);
+        left: 212px;
+        top: 2px;
+    }
+
+    .slider-wrap__image-vertical-three {
+        transform: scale(0.75);
+        left: 379px;
+        top: 35px;
+    }
+
+    .slider-wrap__black-vertical-three {
+        transform: scale(0.76);
+        left: 390px;
+        top: 80px;
+    }
+
+    .slider-links__arrow-prev {
+        top: 212px;
+        left: 29px;
+    }
+
+    .slider-links__arrow-next {
+        bottom: 202px;
+        right: 27px;
+    }
+
+    .services {
+        padding: 40px 30px 25px;
+    }
+
+    .services__text-title {
+        padding: 18px 10px 28px;
+    }
+
+    .services__item {
+        flex: 1 0 35%;
+        margin: 10px 10px 48px;
+    }
+
+    .photos__text {
+        padding-right: 50px;
+        line-height: 29px;
+        padding-top: 20px;
+    }
+
+    .photos__list {
+        padding: 9px 10px 21px 11px;
+    }
+
+    .photos__images  li {
+        flex: 1 0 25%;
+    }
+
+    .photos__images div {
+        background-size: 100%;
+    }
+
+    .about {
+        padding: 51px 30px 59px;
+    }
+
+    .about__list {
+        padding-top: 30px;
+    }
+
+    .about__subtitle {
+        padding: 8px 0 0;
+    }
+
+    .about__contacts {
+        padding-top: 14px;
+    }
+
+    .quote {
+        padding: 51px 40px 46px;
+    }
+
+    .quote__text {
+        padding: 18px 0 24px;
+    }
+
+    /*.quote__data-form {*/
+    /*    width: 60%;*/
+    /*}*/
+
+    .quote__input {
+        margin-bottom: 12px;
+    }
+
+    .quote__textarea {
+        height: 159px;
+    }
+
+    .quote__subtext {
+        padding: 0 0 16px;
+    }
+
 }

@@ -117,34 +117,37 @@ function scrollToNext() {
 
 // Add active class to portfolioMenu links
 
-let portfolioMenu = document.querySelector('.photos__list'),
-    portfolioLinks = document.querySelectorAll('.photos__link');
+let portfolioLinks = document.querySelectorAll('.photos__link');
 
-portfolioMenu.addEventListener('click', function (event) {
-    portfolioLinks.forEach(function (item) {
-        event.preventDefault();
+for (let i = 0; i < portfolioLinks.length; i++) {
+    portfolioLinks[i].addEventListener('click', function (event) {
+        portfolioLinks.forEach(function (item) {
+            event.preventDefault();
 
-        item.classList.remove('active-btn');
-        event.target.classList.add('active-btn');
-
+            if (event.target !== item) {
+                item.classList.remove('active-btn');
+            }
+            event.target.classList.add('active-btn');
+        });
     });
-});
+}
 
 
 // Shuffle pictures
 
 let listImages = document.querySelector('.photos__images'),
-    images = document.querySelectorAll('.photos__img'),
+    imagesLi = document.querySelectorAll('.photos__img'),
+    imagesDiv = document.querySelectorAll('.photos__img div'),
     portfolioBtnAll = document.getElementById('photos__item_all'),
     portfolioBtnWeb = document.getElementById('photos__item_web'),
     portfolioBtnDesign = document.getElementById('photos__item_design'),
     portfolioBtnArtwork = document.getElementById('photos__item_artwork');
 
 function shufflePictures(event) {
-    if (!event.target.classList.contains('active-btn')) {
-        for (let i = images.length; i > 0; i--) {
+    if (event.target.classList.contains('active-btn')) {
+        for (let i = imagesLi.length; i > 0; i--) {
             let randomIndex = Math.floor(Math.random() * (i + 1));
-            listImages.insertBefore(images[randomIndex], images[i]);
+            listImages.insertBefore(imagesLi[randomIndex], imagesLi[i]);
         }
     }
 }
@@ -156,9 +159,9 @@ portfolioBtnArtwork.addEventListener('click', shufflePictures);
 
 // Image border
 
-for (let i = 0; i < images.length; i++) {
-    images[i].addEventListener('click', function (event) {
-        images.forEach(function (item) {
+for (let i = 0; i < imagesDiv.length; i++) {
+    imagesDiv[i].addEventListener('click', function (event) {
+        imagesDiv.forEach(function (item) {
             if (event.target !== item) {
                 item.classList.remove('photos__border');
             }
@@ -176,8 +179,8 @@ for (let i = 0; i < images.length; i++) {
 
 let submitBtn = document.querySelector('.quote__btn'),
     formWindow = document.querySelector('.modal-window'),
-    contentWindow = document.querySelector('.modal-window__content');
-okFormBtn = document.querySelector('.modal-window__submit-btn'),
+    contentWindow = document.querySelector('.modal-window__content'),
+    okFormBtn = document.querySelector('.modal-window__submit-btn'),
     formInputs = document.querySelectorAll('.quote__input'),
     formTextarea = document.querySelector('.quote__textarea'),
     nameHint = document.querySelector('.quote__name-hint'),

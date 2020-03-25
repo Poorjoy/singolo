@@ -51,6 +51,11 @@
 <main>
     <section class="slider">
         <div class="container">
+            <div class="slider__arrow-prev">
+                <a href="#" class="slider-links__arrow-prev">
+                    <img src="assets/img/arrow-left.png" alt="Arrow">
+                </a>
+            </div>
             <div class="slider-wrap">
                 <div class="slider-wrap__list">
                     <div class="slider-wrap__slider">
@@ -89,10 +94,7 @@
                     </div>
                 </div>
             </div>
-            <div class="slider-arrows">
-                <a href="#" class="slider-links__arrow-prev">
-                    <img src="assets/img/arrow-left.png" alt="Arrow">
-                </a>
+            <div class="slider__arrow-next">
                 <a href="#" class="slider-links__arrow-next">
                     <img src="assets/img/arrow-right.png" alt="Arrow">
                 </a>
@@ -110,8 +112,8 @@
                     Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
                     Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
                 </p>
-                <ul class="services__list d-flex justify-content-between">
-                    <li class="services__item d-flex justify-content-between">
+                <ul class="services__list d-flex">
+                    <li class="services__item d-flex">
                         <div class="services__icon d-flex align-items-center">
                             <img src="assets/img/pen.png" alt="Pen">
                         </div>
@@ -125,7 +127,7 @@
                             </p>
                         </div>
                     </li>
-                    <li class="services__item d-flex justify-content-between">
+                    <li class="services__item d-flex">
                         <div class="services__icon d-flex align-items-center">
                             <img src="assets/img/bulb.png" alt="Bulb">
                         </div>
@@ -139,7 +141,7 @@
                             </p>
                         </div>
                     </li>
-                    <li class="services__item d-flex justify-content-between">
+                    <li class="services__item d-flex">
                         <div class="services__icon d-flex align-items-center">
                             <img src="assets/img/heart.png" alt="Heart">
                         </div>
@@ -153,7 +155,7 @@
                             </p>
                         </div>
                     </li>
-                    <li class="services__item d-flex justify-content-between">
+                    <li class="services__item d-flex">
                         <div class="services__icon d-flex align-items-center">
                             <img src="assets/img/phone.png" alt="Phone">
                         </div>
@@ -167,7 +169,7 @@
                             </p>
                         </div>
                     </li>
-                    <li class="services__item d-flex justify-content-between">
+                    <li class="services__item d-flex">
                         <div class="services__icon d-flex align-items-center">
                             <img src="assets/img/bubble.png" alt="Bubble">
                         </div>
@@ -181,7 +183,7 @@
                             </p>
                         </div>
                     </li>
-                    <li class="services__item d-flex justify-content-between">
+                    <li class="services__item d-flex">
                         <div class="services__icon d-flex align-items-center">
                             <img src="assets/img/star.png" alt="Star">
                         </div>
@@ -214,8 +216,8 @@
                             All
                         </a>
                     </li>
-                    <li class="photos__item" id="photos__item_web">
-                        <a href="#" class="photos__link">
+                    <li class="photos__item">
+                        <a href="#" class="photos__link" id="photos__item_web">
                             Web Design
                         </a>
                     </li>
@@ -230,19 +232,43 @@
                         </a>
                     </li>
                 </ul>
-                <ul class="photos__images d-flex justify-content-between">
-                    <li class="photos__img photos__img-project-one"></li>
-                    <li class="photos__img photos__img-project-two"></li>
-                    <li class="photos__img photos__img-project-three"></li>
-                    <li class="photos__img photos__img-project-four"></li>
-                    <li class="photos__img photos__img-project-five"></li>
-                    <li class="photos__img photos__img-project-six"></li>
-                    <li class="photos__img photos__img-project-seven"></li>
-                    <li class="photos__img photos__img-project-eight"></li>
-                    <li class="photos__img photos__img-project-nine"></li>
-                    <li class="photos__img photos__img-project-ten"></li>
-                    <li class="photos__img photos__img-project-eleven"></li>
-                    <li class="photos__img photos__img-project-twelve"></li>
+                <ul class="photos__images d-flex">
+                    <li class="photos__img">
+                        <div class="photos__img-project-one"></div>
+                    </li>
+                    <li class="photos__img">
+                        <div class="photos__img-project-two"></div>
+                    </li>
+                    <li class="photos__img">
+                        <div class="photos__img-project-three"></div>
+                    </li>
+                    <li class="photos__img">
+                        <div class="photos__img-project-four"></div>
+                    </li>
+                    <li class="photos__img">
+                        <div class="photos__img-project-five"></div>
+                    </li>
+                    <li class="photos__img">
+                        <div class="photos__img-project-six"></div>
+                    </li>
+                    <li class="photos__img">
+                        <div class="photos__img-project-seven"></div>
+                    </li>
+                    <li class="photos__img">
+                        <div class="photos__img-project-eight"></div>
+                    </li>
+                    <li class="photos__img">
+                        <div class="photos__img-project-nine"></div>
+                    </li>
+                    <li class="photos__img">
+                        <div class="photos__img-project-ten"></div>
+                    </li>
+                    <li class="photos__img">
+                        <div class="photos__img-project-eleven"></div>
+                    </li>
+                    <li class="photos__img">
+                        <div class="photos__img-project-twelve"></div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -258,7 +284,7 @@
                     Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
                     Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
                 </p>
-                <ul class="about__list d-flex justify-content-between">
+                <ul class="about__list d-flex">
                     <li class="about__item">
                         <img src="assets/img/Photo1.png" alt="Photo1" class="about__img">
                         <h3 class="about__subtitle">
@@ -368,7 +394,8 @@
                             Contact Information
                         </h3>
                         <p class="quote__subtext">
-                            Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus.
+                            Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam
+                            tellus.
                             Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus.
                             Morbi at aliquet turpis, et consequat felis.
                         </p>
