@@ -18,6 +18,18 @@ function onScroll() {
     });
 }
 
+// Add active class to hamburger menu
+
+document.querySelector('.nav__button').addEventListener('click', function (event) {
+    event.preventDefault();
+
+    if (this.classList.contains('is-active')) {
+        this.classList.remove('is-active');
+    } else {
+        this.classList.add('is-active');
+    }
+});
+
 // Black screen
 
 let iphoneVerticalScreen = document.querySelector('.slider-wrap__screen-wrap-vertical'),
