@@ -7,26 +7,44 @@ function onScroll() {
     const links = document.querySelectorAll('.nav__link');
 
     divs.forEach((el) => {
-        if (el.offsetTop - 300 < curPos) {
-            links.forEach((a) => {
-                a.classList.remove('active');
-                if (el.getAttribute('id') === a.getAttribute('href').substring(1)) {
-                    a.classList.add('active');
-                }
-            })
+
+        if (document.documentElement.clientWidth <= 767) {
+            if (el.offsetTop - 100 < curPos) {
+                links.forEach((a) => {
+                    a.classList.remove('active');
+                    if (el.getAttribute('id') === a.getAttribute('href').substring(1)) {
+                        a.classList.add('active');
+                    }
+                })
+            }
+        } else {
+            if (el.offsetTop - 300 < curPos) {
+                links.forEach((a) => {
+                    a.classList.remove('active');
+                    if (el.getAttribute('id') === a.getAttribute('href').substring(1)) {
+                        a.classList.add('active');
+                    }
+                })
+            }
         }
     });
 }
 
 // Add active class to hamburger menu
+let navMenu = document.querySelector('.nav__nav'),
+    nav = document.querySelector('.nav');
 
 document.querySelector('.nav__button').addEventListener('click', function (event) {
     event.preventDefault();
 
-    if (this.classList.contains('is-active')) {
+    if (this.classList.contains('is-active') && navMenu.classList.contains('menu-opened') && nav.classList.contains('left')) {
         this.classList.remove('is-active');
+        navMenu.classList.remove('menu-opened');
+        nav.classList.remove('left');
     } else {
         this.classList.add('is-active');
+        navMenu.classList.add('menu-opened');
+        nav.classList.add('left');
     }
 });
 

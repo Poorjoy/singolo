@@ -253,11 +253,6 @@ input:focus::placeholder, textarea:focus::placeholder {
     transition-delay: 0s, 0.3s;
 }
 
-/*.nav__menu-opened {*/
-/*    position: absolute;*/
-/*    flex-direction: column;*/
-/*}*/
-
 /* ------ Slider ------ */
 
 .slider {
@@ -528,8 +523,11 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 
 .photos__list {
-    padding: 12px 10px 12px 11px;
-    width: 33%;
+    padding: 12px 0 12px 11px;
+}
+
+.photos__item {
+    padding-right: 10px;
 }
 
 .photos__link {
@@ -1184,7 +1182,7 @@ input:focus::placeholder, textarea:focus::placeholder {
     }
 
     .photos__list {
-        padding: 9px 10px 21px 11px;
+        padding: 10px 0 20px 11px;
     }
 
     .photos__images  li {
@@ -1237,6 +1235,8 @@ input:focus::placeholder, textarea:focus::placeholder {
     .nav__title {
         font-size: 19px;
         letter-spacing: normal;
+        position: relative;
+        z-index: 5;
     }
 
     .nav {
@@ -1244,8 +1244,44 @@ input:focus::placeholder, textarea:focus::placeholder {
         padding: 24px 40px 16px 52px;
     }
 
+    .left {
+        justify-content: left;
+        margin-left: 19px;
+    }
+
     .nav__nav {
-        display: none;
+        width: 279px;
+        height: 100%;
+        background-color: #2d303a;
+        position: fixed;
+        top: 0;
+        left: -300px;
+        display: flex;
+        justify-content: center;
+        transition: left 0.8s cubic-bezier(1, 0, 0, 1);
+    }
+
+    .nav__menu {
+        display: flex;
+        flex-direction: column;
+        padding-top: 204px;
+    }
+
+    .nav__item {
+        padding-top: 27px;
+        padding-left: 4px;
+    }
+
+    .nav__menu li + li::before {
+        content: "";
+    }
+
+    .nav__link {
+        font-size: 25px;
+    }
+
+    .menu-opened {
+        left: 0;
     }
 
     .nav__button {
@@ -1359,8 +1395,7 @@ input:focus::placeholder, textarea:focus::placeholder {
     }
 
     .photos__list {
-        width: 93%;
-        padding: 14px 10px 22px 7px;
+        padding: 15px 0 21px 7px;
     }
 
     .photos__images li {
