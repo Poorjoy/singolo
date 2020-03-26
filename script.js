@@ -32,19 +32,23 @@ function onScroll() {
 
 // Add active class to hamburger menu
 let navMenu = document.querySelector('.nav__nav'),
-    nav = document.querySelector('.nav');
+    nav = document.querySelector('.nav'),
+    navOverlay = document.querySelector('.nav__overlay');
 
 document.querySelector('.nav__button').addEventListener('click', function (event) {
     event.preventDefault();
 
-    if (this.classList.contains('is-active') && navMenu.classList.contains('menu-opened') && nav.classList.contains('left')) {
+    if (this.classList.contains('is-active') && navMenu.classList.contains('menu-opened') && nav.classList.contains('left')
+        && navOverlay.classList.contains('show-overlay')) {
         this.classList.remove('is-active');
         navMenu.classList.remove('menu-opened');
         nav.classList.remove('left');
+        navOverlay.classList.remove('show-overlay');
     } else {
         this.classList.add('is-active');
         navMenu.classList.add('menu-opened');
         nav.classList.add('left');
+        navOverlay.classList.add('show-overlay');
     }
 });
 
@@ -175,8 +179,9 @@ let listImages = document.querySelector('.photos__images'),
 
 function shufflePictures(event) {
     if (event.target.classList.contains('active-btn')) {
+
         for (let i = imagesLi.length; i > 0; i--) {
-            let randomIndex = Math.floor(Math.random() * (i + 1));
+            let randomIndex = Math.floor(Math.random() * (i === 12 ? i : i + 1));
             listImages.insertBefore(imagesLi[randomIndex], imagesLi[i]);
         }
     }

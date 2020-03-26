@@ -193,12 +193,29 @@ input:focus::placeholder, textarea:focus::placeholder {
     color: #f06c64 ;
 }
 
+.nav__overlay {
+    width: calc(100% - 279px);
+    height: 100%;
+    background: #000;
+    opacity: 0.6;
+    position: fixed;
+    right: calc(279px - 100%);
+    top: 0;
+    transition: right 0.8s cubic-bezier(1, 0, 0, 1);
+    display: none;
+}
+
+.show-overlay {
+    right: 0;
+}
+
 .nav__button {
     display: none;
     position: absolute;
     left: 3px;
     top: -9px;
     width: 60px;
+    height: 60px;
     font-size: 0;
 }
 
@@ -258,6 +275,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 .slider {
     background-color: #f06c64;
     border-bottom: 6px solid #ea676b;
+    scroll-margin-top: 95px;
 }
 
 .new-bg {
@@ -1242,6 +1260,7 @@ input:focus::placeholder, textarea:focus::placeholder {
     .nav {
         justify-content: center;
         padding: 24px 40px 16px 52px;
+        transition: all 1s ease;
     }
 
     .left {
@@ -1282,6 +1301,10 @@ input:focus::placeholder, textarea:focus::placeholder {
 
     .menu-opened {
         left: 0;
+    }
+
+    .nav__overlay {
+        display: block;
     }
 
     .nav__button {
@@ -1374,8 +1397,10 @@ input:focus::placeholder, textarea:focus::placeholder {
 
     .services__list {
         flex-direction: column;
-        align-items: center;
-        margin-left: -12px;
+    }
+
+    .services__wrap {
+        width: calc(100% - 80px);
     }
 
     .services__item {
