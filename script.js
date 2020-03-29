@@ -170,8 +170,10 @@ for (let i = 0; i < portfolioLinks.length; i++) {
 
             if (event.target !== item) {
                 item.classList.remove('active-btn');
+                item.classList.remove('disabled');
             }
             event.target.classList.add('active-btn');
+            event.target.classList.add('disabled');
         });
     });
 }
