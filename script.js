@@ -1,10 +1,11 @@
 // Add active class to menu links
+let links = document.querySelectorAll('.nav__link');
+
 document.addEventListener('scroll', onScroll);
 
 function onScroll() {
-    const curPos = window.scrollY;
-    const divs = document.querySelectorAll('.anchor');
-    const links = document.querySelectorAll('.nav__link');
+    let curPos = window.scrollY,
+        divs = document.querySelectorAll('.anchor');
 
     divs.forEach((el) => {
 
@@ -33,27 +34,36 @@ function onScroll() {
 // Add active class to hamburger menu
 let navMenu = document.querySelector('.nav__nav'),
     nav = document.querySelector('.nav'),
-    navOverlay = document.querySelector('.nav__overlay');
+    navOverlay = document.querySelector('.nav__overlay'),
+    navButton = document.querySelector('.nav__button'),
+    timeoutScroll = function() {setTimeout(closeMenu, 400)};
 
-document.querySelector('.nav__button').addEventListener('click', function (event) {
-    event.preventDefault();
+navButton.addEventListener('click', closeMenu);
 
-    if (this.classList.contains('is-active') && navMenu.classList.contains('menu-opened') && nav.classList.contains('left')
+links.forEach( (link) => {
+    link.addEventListener('click', timeoutScroll);
+});
+
+function closeMenu(event) {
+    if (event !== null && event !== undefined) {
+        event.preventDefault();
+    }
+
+    if (navButton.classList.contains('is-active') && navMenu.classList.contains('menu-opened') && nav.classList.contains('left')
         && navOverlay.classList.contains('show-overlay')) {
-        this.classList.remove('is-active');
+        navButton.classList.remove('is-active');
         navMenu.classList.remove('menu-opened');
         nav.classList.remove('left');
         navOverlay.classList.remove('show-overlay');
     } else {
-        this.classList.add('is-active');
+        navButton.classList.add('is-active');
         navMenu.classList.add('menu-opened');
         nav.classList.add('left');
         navOverlay.classList.add('show-overlay');
     }
-});
+}
 
 // Black screen
-
 let iphoneVerticalScreen = document.querySelector('.slider-wrap__screen-wrap-vertical'),
     iphoneHorizontalScreen = document.querySelector('.slider-wrap__screen-wrap-horizontal'),
     iphoneVerticalScreenOne = document.querySelector('.slider-wrap__screen-wrap-vertical-one'),
@@ -279,9 +289,17 @@ submitBtn.addEventListener('click', function (event) {
             contentWindow.style.height = '370px';
         }
 
-        if (formTextarea.value.length >= 601 && formTextarea.value.length <= 1000) {
+        if (formTextarea.value.length >= 601 && formTextarea.value.length <= 1202) {
             contentWindow.style.width = '520px';
             contentWindow.style.height = '450px';
+        }
+
+        if (formTextarea.value.length > 1202) {
+            contentWindow.style.width = '520px';
+            contentWindow.style.height = '450px';
+            describeText.style.width = '490px';
+            describeText.style.height = '300px';
+            describeText.style.overflow = 'scroll';
         }
 
         formWindow.classList.remove('none');
